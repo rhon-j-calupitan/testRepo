@@ -2,6 +2,10 @@ const http = require("http");
 const fs = require("fs");
 const port = 3000;
 
+var path = require('path');
+var root = path.dirname(require.main.filename);
+inFile: root + 'index.html'
+
 const server = http.createServer(function (req, res) {
   res.writeHead(200, { "Content-Type": "text/html" });
   fs.readFile("index.html", function (error, data) {
